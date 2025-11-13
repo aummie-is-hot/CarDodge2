@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" onKeyPressed="#KeyPressed" onKeyReleased="#KeyRealsed" onMouseClicked="#shootA" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarDodge.fxcore.FXMLController">
+    <children>
+      <ImageView fx:id="imgBack1" fitHeight="500.0" fitWidth="800.0" layoutY="-500.0" opacity="0.89" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../New%20Project.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgBack2" fitHeight="503.0" fitWidth="800.0" opacity="0.89" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../New%20Project.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="rectangleBorder3" arcHeight="5.0" arcWidth="5.0" height="13.0" layoutX="-9.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="802.0" />
+      <Rectangle fx:id="rectangleBorder1" arcHeight="5.0" arcWidth="5.0" height="503.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Rectangle fx:id="rectangleBorder2" arcHeight="5.0" arcWidth="5.0" height="503.0" layoutX="791.0" stroke="BLACK" strokeType="INSIDE" width="11.0" />
+      <Pane fx:id="PaneObstacle3" layoutX="464.0" layoutY="3.0" prefHeight="64.0" prefWidth="87.0">
+         <children>
+            <Rectangle fx:id="hit3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="10.0" layoutY="10.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="68.0" />
+            <ImageView fx:id="obstacle3" fitHeight="75.0" fitWidth="87.0" layoutY="-5.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../10809503.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="PaneObstacle2" layoutX="464.0" layoutY="3.0" prefHeight="64.0" prefWidth="87.0">
+         <children>
+            <Rectangle fx:id="hit2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="46.0" layoutX="10.0" layoutY="10.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="68.0" />
+            <ImageView fx:id="obstacle2" fitHeight="75.0" fitWidth="87.0" layoutY="-5.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../10809503.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="PaneObstacle4" layoutX="464.0" layoutY="3.0" prefHeight="64.0" prefWidth="87.0">
+         <children>
+            <Rectangle fx:id="hit4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="75.0" layoutX="19.0" layoutY="-7.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="49.0" />
+            <ImageView fx:id="obstacle4" fitHeight="75.0" fitWidth="87.0" layoutY="-5.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../PoliceRemade.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="PaneObstacle" layoutX="464.0" layoutY="3.0" prefHeight="64.0" prefWidth="87.0">
+         <children>
+            <Rectangle fx:id="hit1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="75.0" layoutX="20.0" layoutY="-7.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="49.0" />
+            <ImageView fx:id="obstacle" fitHeight="75.0" fitWidth="87.0" layoutY="-5.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../PoliceRemade.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+        <Button fx:id="btnStart" focusTraversable="false" layoutX="17.0" layoutY="99.0" onAction="#btnStartA" text="Start" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="52.0" layoutX="-26.0" layoutY="3.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="46.0" layoutX="-16.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="192.0" />
+        <Label fx:id="lblOut" layoutY="3.0" minHeight="16" minWidth="69" prefHeight="52.0" prefWidth="215.0" text="Score: " />
+      <Label fx:id="lblHighScore" layoutY="52.0" minHeight="16" minWidth="69" prefHeight="52.0" prefWidth="215.0" text="High Score: " />
+      <Rectangle fx:id="rctScoreTimes2" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#00ff77" height="46.0" layoutX="201.0" layoutY="52.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Pane fx:id="paneNewHighScore" layoutX="184.0" layoutY="87.0" prefHeight="327.0" prefWidth="411.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Label layoutX="121.0" layoutY="14.0" prefHeight="52.0" prefWidth="169.0" text="New Highscore!">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNewHighScore" layoutX="2.0" layoutY="148.0" prefHeight="52.0" prefWidth="411.0" text="New Highscore: ">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnOkay" focusTraversable="false" layoutX="181.0" layoutY="274.0" mnemonicParsing="false" onAction="#btnOkayA" text="Okay" />
+         </children>
+      </Pane>
+      <Rectangle fx:id="rctInvisible" arcHeight="5.0" arcWidth="5.0" disable="true" fill="#00fff2" height="46.0" layoutX="651.0" layoutY="52.0" stroke="BLACK" strokeType="INSIDE" width="48.0" />
+      <Pane fx:id="PaneEscape" layoutY="-1.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: white;" visible="false">
+         <children>
+            <Label fx:id="lblHighScore1" layoutY="-10.0" minHeight="16" minWidth="69" prefHeight="126.0" prefWidth="333.0" text="SURVIVE">
+               <font>
+                  <Font size="77.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="healthBar" layoutX="595.0" layoutY="-1.0" prefHeight="58.0" prefWidth="209.0" progress="1.0" />
+            <Pane fx:id="Tank" layoutX="338.0" layoutY="-1.0" prefHeight="200.0" prefWidth="200.0" rotate="180.0">
+               <children>
+                  <ImageView fitHeight="105.0" fitWidth="155.0" layoutX="24.0" layoutY="43.0" pickOnBounds="true" smooth="false">
+                     <image>
+                        <Image url="@../tank.png" />
+                     </image>
+                  </ImageView>
+                  <Rectangle fx:id="tankHit" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="88.0" layoutX="55.0" layoutY="59.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="87.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Rectangle fx:id="rctBullet" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="-118.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" width="21.0" />
+      <Pane fx:id="PanePlayer" layoutX="392.0" layoutY="386.0" prefHeight="95.0" prefWidth="58.0">
+         <children>
+            <Rectangle fx:id="hit" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="95.0" layoutX="1.0" layoutY="1.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="49.0" />
+            <ImageView fx:id="Players" fitHeight="105.0" fitWidth="68.0" layoutX="-5.0" layoutY="-5.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../racecarupgraded.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Rectangle fx:id="rctTankBullet" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="52.0" layoutX="-108.0" layoutY="172.0" stroke="BLACK" strokeType="INSIDE" width="58.0" />
+      <Rectangle fx:id="rctTankBullet2" arcHeight="5.0" arcWidth="5.0" height="52.0" layoutX="-98.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="58.0" />
+      <MediaView fx:id="mediaview" fitHeight="500.0" fitWidth="800.0" layoutX="-8.0" layoutY="2.0" />
+      <ImageView fx:id="imgPause" fitHeight="52.0" fitWidth="74.0" focusTraversable="true" layoutX="714.0" layoutY="9.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../pause.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>
